@@ -31,6 +31,14 @@ Supported features:
 * Limiting key management to specific access groups; for code-signed interpreters
 * Making keys non-extractable, so that the key content could not be retrieved, but only used for signing or encryption
 
+Installation
+============
+
+Run the following (on a darwin machine)::
+
+    $ pip install keyrings.osx_keychain_keys
+
+
 Using This Backend
 ==================
 
