@@ -6,6 +6,7 @@ import os
 from enum import Enum
 from typing import Optional, Union
 
+
 # noinspection PyUnresolvedReferences
 from CoreFoundation import (
     CFDictionaryCreateMutable,
