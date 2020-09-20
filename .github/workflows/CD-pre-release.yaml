@@ -1,0 +1,35 @@
+name: CD-pre-release
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.py'
+
+jobs:
+  build-on-push:
+    runs-on: macos-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox
+      - name: Build package
+        run: tox -e build
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: true
+          automatic_release_tag: "latest"
+          title: "Development Build"
+          files: |
+            LICENSE
+            dist/*

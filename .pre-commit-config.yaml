@@ -1,0 +1,18 @@
+default_language_version:
+  python: python3.6
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-yaml
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: fix-encoding-pragma
+  - repo: https://github.com/psf/black
+    rev: 20.8b1
+    hooks:
+      - id: black
