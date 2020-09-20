@@ -16,8 +16,6 @@
 .. image:: https://img.shields.io/github/workflow/status/dany74q/keyrings.osx_keychain_keys/CI
    :alt: CI workflow
 
-|
-
 This library is a backend addon for `keyring <https://github.com/jaraco/keyring>`_, it provides a backend that manages
 OSX keychain key-class items.
 
