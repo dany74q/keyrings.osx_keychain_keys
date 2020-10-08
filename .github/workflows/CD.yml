@@ -6,6 +6,9 @@ on:
       - 'v*'
     paths:
       - '**.py'
+      - '**.cfg'
+      - '**.ini'
+      - '**.toml'
 
 jobs:
   release-on-push:
